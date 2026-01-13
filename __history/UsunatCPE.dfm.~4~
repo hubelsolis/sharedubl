@@ -1,0 +1,74 @@
+object FrmGenCPE: TFrmGenCPE
+  Left = 0
+  Top = 0
+  Caption = 'Generador de CPE'
+  ClientHeight = 483
+  ClientWidth = 903
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object hoja: TMemo
+    Left = 8
+    Top = 45
+    Width = 873
+    Height = 425
+    ScrollBars = ssBoth
+    TabOrder = 0
+  end
+  object BtnLevantarDetallesVenta: TBitBtn
+    Left = 8
+    Top = 8
+    Width = 130
+    Height = 25
+    Caption = 'Levantar Detalles Venta'
+    TabOrder = 1
+    OnClick = BtnLevantarDetallesVentaClick
+  end
+  object BitBtn1: TBitBtn
+    Left = 279
+    Top = 8
+    Width = 130
+    Height = 25
+    Caption = 'Test Firma ACBr'
+    TabOrder = 2
+  end
+  object btnLevantarGuiaRem: TBitBtn
+    Left = 143
+    Top = 8
+    Width = 130
+    Height = 25
+    Caption = 'Levantar Guia Remision'
+    TabOrder = 3
+    OnClick = btnLevantarGuiaRemClick
+  end
+  object xmldoc: TXMLDocument
+    Left = 24
+    Top = 40
+  end
+  object AbZipper1: TAbZipper
+    AutoSave = False
+    DOSMode = False
+    StoreOptions = [soStripDrive, soStripPath, soRemoveDots]
+    Left = 72
+    Top = 40
+  end
+  object ClienteSOAP: THTTPRIO
+    OnBeforeExecute = ClienteSOAPBeforeExecute
+    Converter.Options = [soSendMultiRefObj, soTryAllSchema, soRootRefNodesToBody, soCacheMimeResponse, soUTF8EncodeXML]
+    Left = 224
+    Top = 40
+  end
+  object IdEncoderMIME1: TIdEncoderMIME
+    FillChar = '='
+    Left = 144
+    Top = 40
+  end
+end
